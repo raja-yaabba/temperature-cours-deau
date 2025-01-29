@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche des données</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a id="logo" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo">
+            <span>Température</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Accueil</a></li>
+                <li><a href="{{ url_for('choice') }}">Recherche des données</a></li>
+                <li><a href="{{ url_for('carte') }}">Carte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="station-choice">
+        <h1>Choisissez un critère de recherche</h1>
+        <form method="POST">
+            <label for="choice-departement">
+                <input type="radio" id="choice-departement" name="choice" value="departement">
+                Département
+            </label>
+            <label for="choice-commune">
+                <input type="radio" id="choice-commune" name="choice" value="commune">
+                Commune
+            </label>
+            
+            <div id="departement-select" style="display: none;">
+                <label for="departement">Choisissez un département :</label>
+                <select name="departement" id="departement">
+                    {% for dep in departements %}
+                    <option value="{{ dep }}">{{ dep }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div id="commune-select" style="display: none;">
+                <label for="commune">Choisissez une commune :</label>
+                <select name="commune" id="commune">
+                    {% for commune in communes %}
+                    <option value="{{ commune[0] }}">{{ commune[1] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+     
+            <button type="submit">Voir les stations</button>
+        </form>
+    </main>
+    <footer>
+        <img src="{{ url_for('static', filename='images/iut-logo.png') }}" alt="Logo footer">
+        <span>RABONARSON - DURANDEAU - YAABBA - LAM<br>Copyright © 2024</span>
+    </footer>
+
+    <script>
+        document.getElementById('choice-departement').addEventListener('click', function() {
+            document.getElementById('departement-select').style.display = 'block';
+            document.getElementById('commune-select').style.display = 'none';
+        });
+
+        document.getElementById('choice-commune').addEventListener('click', function() {
+            document.getElementById('departement-select').style.display = 'none';
+            document.getElementById('commune-select').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

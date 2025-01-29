@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Données Chroniques</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a id="logo" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo">
+            <span>Température</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Accueil</a></li>
+                <li><a href="{{ url_for('choice') }}">Recherche des données</a></li>
+                <li><a href="{{ url_for('carte') }}">Carte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Données Chroniques pour la Station {{ station_id }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Température</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.date_mesure_temp }}</td>
+                    <td>{{ item.resultat }}°C</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <img src="{{ url_for('static', filename='images/iut-logo.png') }}" alt="Logo footer">
+        <span>RABONARSON - DURANDEAU - YAABBA - LAM<br>Copyright © 2024</span>
+    </footer>
+</body>
+</html>
