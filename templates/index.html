@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Température</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a id="logo" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo">
+            <span>Température</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Accueil</a></li>
+                <li><a href="{{ url_for('choice') }}">Recherche des données</a></li>
+                <li><a href="{{ url_for('carte') }}">Carte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-page">
+            <h1>Bienvenue sur le site de suivi des températures</h1>
+            <p>Explorez les données météorologiques par département ou commune pour connaître les tendances climatiques de votre région.</p>
+            <a href="{{ url_for('choice') }}">Commencer la Recherche</a>
+        </div>
+    </main>
+
+    <section class="description">
+        <h2>Suivi des Températures</h2>
+        <p>
+            Bienvenue sur notre plateforme de suivi des températures et des précipitations. Ce projet a pour objectif de fournir un accès facile et rapide aux données de l'API provenant de Hub'eau pour diverses territoires en France.
+        </p>
+        <h3>Fonctionnalités :</h3>
+        <ul>
+            <li><strong>Recherche par Département ou Commune :</strong> Sélectionnez une localisation spécifique pour obtenir des données précises sur les températures.</li>
+            <li><strong>Affichage des Données Chroniques :</strong> Visualisez les données chronologiques pour une station sélectionnée. Cette fonctionnalité permet d'analyser les tendances météorologiques sur des périodes définies.</li>
+            <li><strong>Carte Interactive :</strong> Accédez à une carte interactive affichant les points de mesure des températures et des précipitations à travers la France.</li>
+            <li><strong>Graphique évolution de températures</strong> Accédez à un graphique d'évolution des températures sur un site par rapport à deux dates et une marge </li>
+        </ul>
+
+        <h3>Notre Équipe</h3>
+        <p>
+            Ce projet est réalisé par l'équipe composée de :
+        </p>
+        <ul>
+            <li>RABONARSON Jamie</li>
+            <li>DURANDEAU Matéo</li>
+            <li>YAABBA Raja</li>
+            <li>LAM Harry</li>
+        </ul>
+    </section>
+
+    <footer>
+        <img src="{{ url_for('static', filename='images/iut-logo.png') }}" alt="Logo footer">
+        <span>RABONARSON - DURANDEAU - YAABBA - LAM<br>Copyright © 2024</span>
+    </footer>
+</body>
+</html>
