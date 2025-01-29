@@ -1,5 +1,4 @@
 # Gestion des Températures des Cours d'Eau  
-
 Projet réalisé en juin 2024 par une équipe de quatre développeurs, visant à analyser et visualiser les températures des cours d'eau en France à partir des données de l'API **Hub’Eau** – Service EauFrance.  
 
 ## Fonctionnalités  
@@ -20,12 +19,8 @@ Projet réalisé en juin 2024 par une équipe de quatre développeurs, visant à
    git clone https://github.com/raja-yaabba/temperature-cours-deau.git
    cd temperature-cours-deau
    ```
-2. **Installer les dépendances** :  
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Lancer l'application Flask** :  
+2. **Lancer l'application Flask** :  
    ```bash
    python app.py
    ```
-4. **Accéder à l'application** via [http://localhost:5000](http://localhost:5000)  
+3. **Accéder à l'application** via [http://localhost:5000](http://localhost:5000)  
